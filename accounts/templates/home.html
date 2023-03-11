@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Home{% endblock %}</title>
+</head>
+
+<body>
+    <div id="navigation">
+        <h3>Welcome {{request.user.username}}!</h3>
+        {% block navigation %}
+        <ul>
+            <li><a href="http://localhost:8000/profile">Profile</a></li>
+            <li><a href="http://localhost:8000/books">Books</a></li>
+            <li><a href="http://localhost:8000/submit_book">Create Book</a></li>
+            <li><a href="http://localhost:8000/submit_publisher">Create Publisher</a></li>
+            <li><a href="http://localhost:8000/logout">Logout</a></li>
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

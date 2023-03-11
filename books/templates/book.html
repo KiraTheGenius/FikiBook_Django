@@ -1,0 +1,14 @@
+{% load rest_framework %}
+<title>Book</title>
+
+{% block title %}
+    <h3>Submit a Book</h3>
+{% endblock %}
+
+{% block content %}
+<form class="form-inline" method="post" novalidate>
+    {% csrf_token %}
+    {% render_form serializer %}
+    <button type="submit" class="btn btn-secondary">Submit</button>
+</form>
+{% endblock %}

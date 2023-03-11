@@ -1,0 +1,15 @@
+{% load static %}
+
+<title>Signup</title>
+
+{% block title %}
+<h3> Create an Account </h3>
+{% endblock %}
+
+{% block content %}
+	<form method="POST" class="form-group">
+		{% csrf_token %}
+		{{form.as_p}}
+		<button type="submit" class="btn btn-success">Register</button>
+	</form>
+{% endblock %}

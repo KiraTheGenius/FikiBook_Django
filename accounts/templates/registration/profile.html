@@ -1,0 +1,17 @@
+{% load static %}
+<title>Profile</title>
+
+{% block title %}
+<h3>{{request.user.username}}'s Profile :)</h3>
+{% endblock %}
+
+{% block content %}
+	<form method="POST" enctype='multipart/form-data' class="form-group">
+		{% csrf_token %}
+		{% if user.avatar %}
+		 	<img src="{{ request.user.avatar.url }}" alt="" width="80px" height="80px">
+		{% endif %}
+		{{form.as_p}}
+		<button type="submit" class="btn btn-success">Save</button>
+	</form>
+{% endblock %}

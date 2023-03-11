@@ -1,0 +1,29 @@
+{% load rest_framework %}
+<title>Books</title>
+
+{% block title %}
+    <h3>View Books</h3>
+{% endblock %}
+
+{% block content %}
+    <table class="table" border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Publication Date</th>
+                <th>Publisher</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.name }}</td>
+                    <td>{{ book.publication_date }}</td>
+                    <td>{{ book.publisher.name }}</td>
+                    <td>{{ book.description }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
